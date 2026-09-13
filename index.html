@@ -1,45 +1,167 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="th">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pongpiset Profile 2026</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
-        rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Design by Pongpiset</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Space Mono & Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Prompt:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgGreen: '#70F3A2',
+                        darkBtn: '#2E2E2E',
+                    },
+                    fontFamily: {
+                        mono: ['"Space Mono"', '"Fira Code"', 'monospace'],
+                        thai: ['Prompt', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
         body {
-            background-color: #91ffb2;
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto Mono';
+            background-color: #70F3A2;
+            font-family: 'Space Mono', 'Fira Code', monospace;
+        }
+
+        .thai-font {
+            font-family: 'Prompt', 'Space Mono', sans-serif;
+        }
+
+        /* Card Container styling with smooth interaction */
+        .preview-card {
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .preview-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 35px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Custom scrollbar for tall preview cards */
+        .custom-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scroll::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 4px;
+        }
+
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.6);
         }
     </style>
 </head>
 
-<body>
-    <!-- ส่วนของ hero -->
-    <div class="hero">
-        <!-- sec-1 -->
-        <div class="sec-1">
+<body
+    class="min-h-screen flex flex-col justify-between p-4 sm:p-6 md:p-8 text-slate-900 selection:bg-black selection:text-[#70F3A2] antialiased">
+
+    <main class="w-full mx-auto my-auto flex-1 flex flex-col justify-center">
+
+        <!-- MAIN GRID: Expanded layout using full width -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 xl:gap-8 items-stretch h-full">
+
+            <!-- LEFT CONTAINER (Span 7 cols) -->
+            <div class="lg:col-span-7 flex flex-col justify-between space-y-6 lg:space-y-8">
+
+                <!-- HEADER CONTENT -->
+                <div class="space-y-5 pt-2">
+                    <h1
+                        class="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] xl:text-7xl font-bold tracking-tight text-slate-900 leading-[1.12]">
+                        My Web Design by<br>
+                        HTML &nbsp;CSS
+                    </h1>
+
+                    <p
+                        class="text-slate-900 text-base sm:text-lg md:text-xl xl:text-2xl max-w-3xl leading-relaxed font-normal opacity-90">
+                        Lorem ipsum dolor sit amet,<br class="hidden sm:inline">
+                        consectetur adipiscing elit.<br>
+                        Cursus imperdiet sed id elementum.<br>
+                        Quam vel aliquam sit vulputate.
+                    </p>
+
+                    <div class="pt-2">
+                        <button
+                            class="bg-[#2E2E2E] hover:bg-black text-white font-mono text-base sm:text-lg px-9 py-3.5 rounded-full shadow-lg transition-all transform hover:scale-105 active:scale-95">
+                            Follow Me
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-4">
+
+                    <!-- CARD 1 (Horizontal Left - ./images/pic1.png) -->
+                    <div
+                        class="preview-card rounded-2xl overflow-hidden bg-black aspect-[16/10] relative border border-black/10">
+                        <img src="./images/pic1.png" alt="pic1" class="w-full h-full object-cover object-top"
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x500/1e293b/70F3A2?text=./images/pic1.png';">
+                    </div>
+
+                    <!-- CARD 2 (Horizontal Right - ./images/pic2.png) -->
+                    <div
+                        class="preview-card rounded-2xl overflow-hidden bg-black aspect-[16/10] relative border border-black/10">
+                        <img src="./images/pic2.png" alt="pic2" class="w-full h-full object-cover object-top"
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x500/1e293b/70F3A2?text=./images/pic2.png';">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT CONTAINER (Span 5 cols - Tall vertical cards) -->
+            <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-5 h-full min-h-[550px] lg:min-h-[680px]">
+
+                <!-- CARD 3 (Vertical Left - ./images/pic3.png) -->
+                <div
+                    class="preview-card rounded-2xl overflow-hidden bg-[#050926] h-full min-h-[500px] lg:h-full relative border border-black/10">
+                    <div class="w-full h-full overflow-y-auto custom-scroll">
+                        <img src="./images/pic3.png" alt="pic3" class="w-full h-auto min-h-full object-cover object-top"
+                            onerror="this.onerror=null; this.src='https://placehold.co/600x1400/0f172a/70F3A2?text=./images/pic3.png';">
+                    </div>
+                </div>
+
+                <!-- CARD 4 (Vertical Right - ./images/pic4.png) -->
+                <div
+                    class="preview-card rounded-2xl overflow-hidden bg-[#141414] h-full min-h-[500px] lg:h-full relative border border-black/10">
+                    <div class="w-full h-full overflow-y-auto custom-scroll">
+                        <img src="./images/pic4.png" alt="pic4" class="w-full h-auto min-h-full object-cover object-top"
+                            onerror="this.onerror=null; this.src='https://placehold.co/600x1400/18181b/70F3A2?text=./images/pic4.png';">
+                    </div>
+                </div>
+
+            </div>
 
         </div>
-        <!-- sec-2 -->
-        <div class="sec-2">
 
-        </div>
-        <!-- sec-3 -->
-        <div class="sec-3">
+    </main>
 
-        </div>
-    </div>
+    <footer class="mt-8 sm:mt-10 pt-4 text-center space-y-1 text-slate-900 thai-font">
+        <p class="text-sm sm:text-base font-normal opacity-90">(รูปและเนื้อหาทั้งหมดใช้เพื่อการศึกษาเท่านั้น)</p>
+        <p class="text-base sm:text-lg font-semibold tracking-wide">Created by NinniN SAU</p>
+        <p class="text-sm sm:text-base font-mono">Copyright &copy; 2026 WoW WoW WoW</p>
+    </footer>
 
-    <!-- ส่วนของ footer -->
-    <div class="footer">
-
-    </div>
 </body>
 
 </html>
